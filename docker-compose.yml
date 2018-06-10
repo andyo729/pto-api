@@ -1,16 +1,16 @@
 version: '2'
 services:
   myapp:
-        container_name: "myapp"
-        image: library/node:latest
-        volumes:
-            - .:/app
-        working_dir: /app
-        links:
-            - mongodb
-        depends_on:
-            - mongodb
-        command: node ./build/src/index.js
+    container_name: "myapp"
+    image: library/node:latest
+    volumes:
+      - .:/app
+    working_dir: /app
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    command: node ./build/src/index.js
   mongodb:
     image: mongo:latest
     container_name: "mongodb"
